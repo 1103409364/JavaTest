@@ -10,7 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/../demo1/demo1.iml" filepath="$PROJECT_DIR$/../demo1/demo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/examManage/examManage.iml" filepath="$PROJECT_DIR$/examManage/examManage.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloWorld/helloWorld.iml" filepath="$PROJECT_DIR$/helloWorld/helloWorld.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbcTest/jdbcTest.iml" filepath="$PROJECT_DIR$/jdbcTest/jdbcTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBCTest/jdbcTest.iml" filepath="$PROJECT_DIR$/JDBCTest/jdbcTest.iml" />
     </modules>
   </component>
 </project>

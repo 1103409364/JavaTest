@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/JDBCTest1.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/JDBCTest2.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/JDBCTest3.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/com/test/jdbc/JDBCTest4.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/com/test/jdbc/JDBCTest5.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/com/test/jdbc/JDBCTest6.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/JDBCTest/src/com/test/jdbc/JDBCTest7.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/MyBatisTest/src/com/xxx/mapper/StudentMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/MyBatisTest/src/com/xxx/mapper/TeacherMapper.xml" dialect="GenericSQL" />
   </component>
 </project>
