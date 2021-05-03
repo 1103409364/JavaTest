@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JspTest01/JspTest01.iml" filepath="$PROJECT_DIR$/JspTest01/JspTest01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyBatisTest/MyBatisTest.iml" filepath="$PROJECT_DIR$/MyBatisTest/MyBatisTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServletTest01/ServletTest01.iml" filepath="$PROJECT_DIR$/ServletTest01/ServletTest01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServletTest02/ServletTest02.iml" filepath="$PROJECT_DIR$/ServletTest02/ServletTest02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demo1/demo1.iml" filepath="$PROJECT_DIR$/../demo1/demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/examManage/examManage.iml" filepath="$PROJECT_DIR$/examManage/examManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloWorld/helloWorld.iml" filepath="$PROJECT_DIR$/helloWorld/helloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbcTest/jdbcTest.iml" filepath="$PROJECT_DIR$/jdbcTest/jdbcTest.iml" />
+    </modules>
+  </component>
+</project>
