@@ -4,7 +4,7 @@
     <option name="projectSpecificProfile">
       <ProjectSpecificProfile>
         <option name="formatter" value="ECLIPSE" />
-        <option name="pathToConfigFileJava" value="$APPLICATION_HOME_DIR$/checkcode/eclipse-codestyle.xml" />
+        <option name="pathToConfigFileJava" value="$APPLICATION_HOME_DIR$/checkcode/eclipse-codestyle-indent2.xml" />
         <option name="selectedJavaProfile" value="P3C-CodeStyle" />
       </ProjectSpecificProfile>
     </option>

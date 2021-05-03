@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace :命名空间
+    不同的mapper映射文件使用namespace来做区分
+    不同的mapper映射文件所使用的namespace不允许出现重复
+-->
+<mapper namespace="com.xxx.dao.StudentDao">
+  <!--
+      sql语句必须要写在相应的标签当中
+      <insert>:在标签对中写insert开头的sql语句处理添加操作
+      <update>:在标签对中写update开头的sql语句处理修改操作
+      <delete>:在标签对中写delete开头的sql语句处理删除操作
+      <select>:在标签对中写select开头的sql语句处理查询操作
+  -->
+  <!-- 查询-->
+  <select id="getById" parameterType="java.lang.String" resultType="com.xxx.domain.Student">
+    select *
+    from t_student
+    where id = #{id}
+  </select>
+  <!-- 如果返回的是多条记录，那么resultType返回值类型，应该写为集合的泛型-->
+  <select id="getAll" resultType="com.xxx.domain.Student">
+    select id, name, age
+    from t_student
+  </select>
+  <!--在实际项目开发中，所有标签都要写id属性，
+  <select>标签可以省略parameterType，resultType必填
+  <insert> <update> <delete>这3个标签通常只写id属性，其他属性一概不写
+   sql 这里不用问号占位
+  -->
+  <insert id="save">
+    insert into t_student(id, name, age)
+    values (#{id}, #{name}, #{age})
+  </insert>
+
+  <update id="update">
+    update t_student
+    set name = #{name},
+        age=#{age}
+    where id = #{id}
+  </update>
+
+  <delete id="delete">
+    delete
+    from t_student
+    where id = #{id}
+  </delete>
+</mapper>
