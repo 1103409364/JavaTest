@@ -15,14 +15,14 @@
       <delete>:在标签对中写delete开头的sql语句处理删除操作
       <select>:在标签对中写select开头的sql语句处理查询操作
   -->
-  <!-- 查询-->
-  <select id="getById" parameterType="java.lang.String" resultType="com.xxx.domain.Student">
+  <!-- 查询 com.xxx.domain.Student 别名stu-->
+  <select id="getById" parameterType="java.lang.String" resultType="Student">
     select *
     from t_student
     where id = #{id}
   </select>
   <!-- 如果返回的是多条记录，那么resultType返回值类型，应该写为集合的泛型-->
-  <select id="getAll" resultType="com.xxx.domain.Student">
+  <select id="getAll" resultType="Student">
     select id, name, age
     from t_student
   </select>
