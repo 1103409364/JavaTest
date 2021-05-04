@@ -33,6 +33,7 @@
   <typeAliases>
     <!--    <typeAlias type="com.xxx.domain.Student" alias="stu"/>-->
     <package name="com.xxx.domain"/>
+    <package name="com.xxx.vo"/>
   </typeAliases>
 
   <environments default="development">

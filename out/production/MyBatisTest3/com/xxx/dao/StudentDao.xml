@@ -20,9 +20,25 @@
     parameterType：java.lang.String、String、string或者省略不写
     parameterType="java.lang.String"
   -->
-  <select id="getById" resultType="Student">
-    select *
+  <!--在实际项目开发中，所有标签都要写id属性，
+    <select>标签可以省略parameterType，resultType必填
+    <insert> <update> <delete>这3个标签通常只写id属性，其他属性一概不写
+     sql 这里不用问号占位
+-->
+
+  <!--sql片段
+  sql片段的作用是用来代替sql语句中的代码
+  如果你的mapper映射文件中的sql语句某些代码出现了大量的重复，我们可以使用sql片段来代替他们
+  id: sql片 段的唯一标识， 将来找到sql片段使用id来进行定位
+  实际用处是用来代替复杂的子查询
+  -->
+  <sql id="sqlTemp1">
+    select name, age
     from t_student
+  </sql>
+
+  <select id="getById" resultType="Student">
+    <include refid="sqlTemp1"/>
     where id = #{id}
   </select>
   <!-- 如果返回的是多条记录，那么resultType返回值类型，应该写为集合的泛型-->
@@ -82,29 +98,44 @@
       #{id}
     </foreach>
   </select>
-
-  <!--在实际项目开发中，所有标签都要写id属性，
-  <select>标签可以省略parameterType，resultType必填
-  <insert> <update> <delete>这3个标签通常只写id属性，其他属性一概不写
-   sql 这里不用问号占位
-  -->
+  <!--多表联查，返回map时，key重复需要改名-->
+  <select id="selectNameClass" resultType="map">
+    select s.name, c.name as className
+    from t_student as s
+           join t_classroom as c on s.classroomId = c.id
+  </select>
+  <!--  返回类型使用vo -->
+  <select id="selectNameClassVo" resultType="StudentAndClassroomVo">
+    select s.id studentId, s.name studentName, s.age, c.id classroomId, c.name classroomName
+    from t_student as s
+           join t_classroom as c on s.classroomId = c.id;
+  </select>
+  <!--  加模糊查询-->
+  <select id="selectNameClassVoQuery" resultType="StudentAndClassroomVo">
+    select s.id studentId, s.name studentName, s.age, c.id classroomId, c.name classroomName
+    from t_student as s
+           join t_classroom as c on s.classroomId = c.id
+    where s.name like '%' #{query} '%';
+  </select>
+  <!--插入-->
   <insert id="save">
     insert into t_student(id, name, age)
     values (#{id}, #{name}, #{age})
   </insert>
-
+  <!--修改-->
   <update id="update">
     update t_student
     set name = #{name},
         age=#{age}
     where id = #{id}
   </update>
-
+  <!--删除-->
   <delete id="delete">
     delete
     from t_student
     where id = #{id}
   </delete>
+
   <resultMap id="stuMap" type="Student">
     <!--    id标签：用来配置主键的对应关系
         result标签：用来配置普通字段对应关系

@@ -7,6 +7,7 @@ import com.xxx.dao.StudentDao;
 import com.xxx.domain.Student;
 import com.xxx.service.StudentService;
 import com.xxx.util.SqlSessionUtil;
+import com.xxx.vo.StudentAndClassroomVo;
 
 public class StudentServiceImpl implements StudentService {
   // private final StudentDao studentDao = new StudentDaoImpl(); // 多态
@@ -44,7 +45,22 @@ public class StudentServiceImpl implements StudentService {
   }
 
   @Override
+  public List<Map<String, Object>> selectNameClass() {
+    return this.studentDao.selectNameClass();
+  }
+
+  @Override
   public List<Student> selectByIdArr(final String[] idArr) {
     return this.studentDao.selectByIdArr(idArr);
+  }
+
+  @Override
+  public List<StudentAndClassroomVo> selectNameClassVo() {
+    return this.studentDao.selectNameClassVo();
+  }
+
+  @Override
+  public List<StudentAndClassroomVo> selectNameClassVoQuery(final String query) {
+    return this.studentDao.selectNameClassVoQuery(query);
   }
 }

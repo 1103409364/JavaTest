@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.xxx.domain.Student;
+import com.xxx.vo.StudentAndClassroomVo;
 
 public interface StudentService {
   public Student getById(String id);
@@ -18,5 +19,11 @@ public interface StudentService {
 
   public List<Map<String, Object>> selectAllMap();
 
+  public List<Map<String, Object>> selectNameClass();
+
   public List<Student> selectByIdArr(String[] idArr);
+
+  public List<StudentAndClassroomVo> selectNameClassVo();
+
+  List<StudentAndClassroomVo> selectNameClassVoQuery(String a);
 }
