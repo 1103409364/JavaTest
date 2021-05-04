@@ -12,6 +12,7 @@ import com.xxx.vo.StudentAndClassroomVo;
 public class Test {
   public static void main(final String[] args) {
     // final StudentService ss = new StudentServiceImpl(); // 没走事务 x
+    // 使用动态代理（事务由代理统一处理）
     final StudentService ss = (StudentService)ServiceFactory.getService(new StudentServiceImpl());
     final Student s = new Student();
     // 添加
