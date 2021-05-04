@@ -1,6 +1,7 @@
 package com.xxx.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.xxx.dao.StudentDao;
 import com.xxx.domain.Student;
@@ -25,5 +26,25 @@ public class StudentServiceImpl implements StudentService {
   @Override
   public List<Student> getAll() {
     return this.studentDao.getAll();
+  }
+
+  @Override
+  public List<Student> selectLike(final String query) {
+    return this.studentDao.selectLike(query);
+  }
+
+  @Override
+  public List<Student> selectQuery(final Student s) {
+    return this.studentDao.selectQuery(s);
+  }
+
+  @Override
+  public List<Map<String, Object>> selectAllMap() {
+    return this.studentDao.selectAllMap();
+  }
+
+  @Override
+  public List<Student> selectByIdArr(final String[] idArr) {
+    return this.studentDao.selectByIdArr(idArr);
   }
 }

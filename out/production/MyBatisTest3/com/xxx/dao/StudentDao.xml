@@ -15,8 +15,12 @@
       <delete>:在标签对中写delete开头的sql语句处理删除操作
       <select>:在标签对中写select开头的sql语句处理查询操作
   -->
-  <!-- 查询 com.xxx.domain.Student 别名stu-->
-  <select id="getById" parameterType="java.lang.String" resultType="Student">
+  <!--
+    查询 com.xxx.domain.Student
+    parameterType：java.lang.String、String、string或者省略不写
+    parameterType="java.lang.String"
+  -->
+  <select id="getById" resultType="Student">
     select *
     from t_student
     where id = #{id}
@@ -26,6 +30,59 @@
     select id, name, age
     from t_student
   </select>
+  <!-- 返回map，查到的值被会自动封装为map，有些查询结果使用domain封装不了只能用map -->
+  <select id="selectAllMap" resultType="map">
+    select *
+    from t_student
+  </select>
+  <!--  <select id="selectLike" resultType="Student">-->
+  <!--    select *-->
+  <!--    from t_student-->
+  <!--    where name like '%${value}%'-->
+  <!--  </select>  -->
+
+
+  <!--  可以把%写入参数传进来可以但是不合理  最常用的是空格拼接字符串 -->
+  <select id="selectLike" resultType="Student">
+    select *
+    from t_student
+    where name like '%' #{value} '%'
+  </select>
+
+  <!--  动态sql  多个条件 + 模糊查询
+   where标签必须搭配if标签使用，自动去除第一个and
+   通过if判断，如果有查询条件则展现where关键字，否则不展现where关键字
+ -->
+  <select id="selectQuery" parameterType="Student" resultType="Student">
+    select * from t_student
+    <where>
+      <if test="name != null and name!=''">
+        name like '%' #{name} '%'
+      </if>
+      <if test="age != null and age!=''">
+        and age > #{age}
+      </if>
+    </where>
+  </select>
+  <!--动态sql：传数组参数
+    foreach标签:用来遍历传递来的数组参数
+    collection:标识传递参数的类型
+    array:数组
+    list:集合
+    item:每一次遍历出来的元素，在使用该元素的时候，需要套用在#{}中
+    open:拼接循环的开始符号
+    close:拼接循环的结束符号
+    separator:元素与元素之间的分隔符
+  -->
+  <select id="selectByIdArr" resultType="Student">
+    select *
+    from t_student
+    where id in
+    <foreach collection="array" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </select>
+
   <!--在实际项目开发中，所有标签都要写id属性，
   <select>标签可以省略parameterType，resultType必填
   <insert> <update> <delete>这3个标签通常只写id属性，其他属性一概不写
@@ -48,4 +105,16 @@
     from t_student
     where id = #{id}
   </delete>
+  <resultMap id="stuMap" type="Student">
+    <!--    id标签：用来配置主键的对应关系
+        result标签：用来配置普通字段对应关系
+
+        对于t_student 表，结果一个id，两个普通字段，需要两个result标签
+        property属性配置实体类中的属性名
+        column配置表中的字段名
+    -->
+    <id property="id" column="id"/>
+    <result property="name" column="fullName"/>
+    <result property="age" column="age"/>
+  </resultMap>
 </mapper>

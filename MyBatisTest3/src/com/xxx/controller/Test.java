@@ -13,16 +13,36 @@ public class Test {
     // final StudentService ss = new StudentServiceImpl(); // 没走事务 x
     final StudentService ss = (StudentService)ServiceFactory.getService(new StudentServiceImpl());
     final Student s = new Student();
-    // 测试添加
+    // 添加
     // s.setId("321");
-    // s.setName("myBaits代理");
-    // s.setAge(0);
+    s.setName("a");
+    s.setAge(100);
     //
     // ss.save(s);
-    // 测试根据id查单条
+
+    // 根据id查单条
     // final Student s1 = ss.getById("111"); // 查询可以不用代理
     // System.out.println(s1);
-    final List<Student> sList = ss.getAll();
+    // final List<Student> sList = ss.getAll();
+
+    // 查询结果用map返回
+    // final List<Map<String, Object>> mapList = ss.selectAllMap();
+    // for (final Map<String, Object> m : mapList) {
+    // final Set<String> keySet = m.keySet();
+    // for (final String key : keySet) {
+    // System.out.println("key:" + key + " " + "value:" + m.get(key));
+    // }
+    // }
+
+    // 模糊查询
+    // final List<Student> sList = ss.selectLike("a");
+
+    // 多个条件模糊查询
+    // final List<Student> sList = ss.selectQuery(s);
+
+    // 传数组查询多个
+    final String[] idArr = {"1", "2", "555"};
+    final List<Student> sList = ss.selectByIdArr(idArr);
     for (final Student item : sList) {
       System.out.println(item);
     }
