@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/examManage/examManage.iml" filepath="$PROJECT_DIR$/examManage/examManage.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloWorld/helloWorld.iml" filepath="$PROJECT_DIR$/helloWorld/helloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDBCTest/jdbcTest.iml" filepath="$PROJECT_DIR$/JDBCTest/jdbcTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxyTest01/proxyTest01.iml" filepath="$PROJECT_DIR$/proxyTest01/proxyTest01.iml" />
     </modules>
   </component>
 </project>
