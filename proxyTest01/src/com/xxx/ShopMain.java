@@ -1,8 +1,6 @@
 package com.xxx;
 
-import com.xxx.Taobao.Taobao;
-import com.xxx.pdd.Pdd;
-import com.xxx.pdd.Pdd2;
+import com.xxx.Shop.Taobao;
 
 public class ShopMain {
   public static void main(final String[] args) {
@@ -10,11 +8,11 @@ public class ShopMain {
     final float price = t.sell(1);
     System.out.println(price);
 
-    final Pdd p = new Pdd();
+    final Taobao.Pdd p = new Taobao.Pdd();
     final float price2 = p.sell(1);
     System.out.println(price2);
 
-    final Pdd2 p2 = new Pdd2();
+    final Taobao.Pdd2 p2 = new Taobao.Pdd2();
     System.out.println(p2.sell(1));
   }
 }

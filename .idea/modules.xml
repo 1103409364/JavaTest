@@ -13,6 +13,8 @@
       <module fileurl="file://$PROJECT_DIR$/helloWorld/helloWorld.iml" filepath="$PROJECT_DIR$/helloWorld/helloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDBCTest/jdbcTest.iml" filepath="$PROJECT_DIR$/JDBCTest/jdbcTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxyTest01/proxyTest01.iml" filepath="$PROJECT_DIR$/proxyTest01/proxyTest01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxyTest02/proxyTest02.iml" filepath="$PROJECT_DIR$/proxyTest02/proxyTest02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxyTest03/proxyTest03.iml" filepath="$PROJECT_DIR$/proxyTest03/proxyTest03.iml" />
     </modules>
   </component>
 </project>
