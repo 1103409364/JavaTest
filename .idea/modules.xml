@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JspTest01/JspTest01.iml" filepath="$PROJECT_DIR$/JspTest01/JspTest01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../workSpace/MavenTest01/MavenTest01.iml" filepath="$PROJECT_DIR$/../../workSpace/MavenTest01/MavenTest01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../workSpace/MavenTest02/MavenTest02.iml" filepath="$PROJECT_DIR$/../../workSpace/MavenTest02/MavenTest02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenTest01/MavenTest01.iml" filepath="$PROJECT_DIR$/MavenTest01/MavenTest01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenTest02/MavenTest02.iml" filepath="$PROJECT_DIR$/MavenTest02/MavenTest02.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatisTest/MyBatisTest.iml" filepath="$PROJECT_DIR$/MyBatisTest/MyBatisTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatisTest2/MyBatisTest2.iml" filepath="$PROJECT_DIR$/MyBatisTest2/MyBatisTest2.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatisTest3/MyBatisTest3.iml" filepath="$PROJECT_DIR$/MyBatisTest3/MyBatisTest3.iml" />
