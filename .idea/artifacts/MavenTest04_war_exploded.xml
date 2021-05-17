@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="MavenTest04:war exploded">
+    <output-path>$PROJECT_DIR$/MavenTest04/target/MavenTest04</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>MavenTest04</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MavenTest04" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.0.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/MavenTest04/target/MavenTest04/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="MavenTest04/web/Web" />
+    </root>
+  </artifact>
+</component>

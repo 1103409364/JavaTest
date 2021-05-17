@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/MavenTest04" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -12,6 +13,7 @@
         <option value="$PROJECT_DIR$/../../workSpace/MavenTest02/pom.xml" />
         <option value="$PROJECT_DIR$/MavenTest01/pom.xml" />
         <option value="$PROJECT_DIR$/MavenTest02/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenTest04/pom.xml" />
       </list>
     </option>
   </component>
