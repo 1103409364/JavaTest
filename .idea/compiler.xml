@@ -9,6 +9,7 @@
         <module name="MavenTest04" />
         <module name="demo1" />
         <module name="MavenTest02" />
+        <module name="SpringHello" />
         <module name="MavenTest01" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="MavenTest02" target="1.8" />
       <module name="MavenTest04" target="1.8" />
       <module name="mavenTestJavaSE" target="1.7" />
+      <module name="SpringHello" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
