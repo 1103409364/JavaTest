@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--  <bean id="myStudent" class="com.xxx.ba03.Student" autowire="byName">-->
+  <bean id="myStudent" class="com.xxx.ba04.Student" autowire="byName">
+    <property name="name" value="李三"/>
+    <property name="age" value="78"/>
+    <!--    <property name="school" ref="school"/>-->
+  </bean>
+</beans>

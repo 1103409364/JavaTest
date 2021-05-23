@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--spring-total表示主配置文件，包含其他配置文件，不定义对象
+  语法：<import resources="其他配置文件的路径" />
+  关键字："classpath" 表示类路径（class文件所在的目录 在target中）
+  在spring的主配置文件中要指定其他文件的位置，需要使用classpath，告诉spring到哪去加载读取文件
+  -->
+  <!--  导入配置文件-->
+  <!--  <import resource="classpath:ba03/spring-school.xml"/>-->
+  <!--  <import resource="classpath:ba03/spring-student.xml"/>-->
+  <!--  批量导入配置-->
+  <import resource="classpath:ba04/spring-*.xml"/>
+</beans>
