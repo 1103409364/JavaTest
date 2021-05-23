@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/MavenTest04/pom.xml" />
         <option value="$PROJECT_DIR$/springHello/pom.xml" />
         <option value="$PROJECT_DIR$/SpringDI/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringDIAnno/pom.xml" />
       </list>
     </option>
   </component>
