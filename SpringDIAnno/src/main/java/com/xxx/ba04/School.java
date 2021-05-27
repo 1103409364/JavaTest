@@ -1,11 +1,11 @@
-package com.xxx.ba03;
+package com.xxx.ba04;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("mySchool")
 public class School {
-  @Value("@Resource测试")
+  @Value("xx大学")
   private String name;
 
   @Override
