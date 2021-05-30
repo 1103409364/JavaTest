@@ -20,4 +20,10 @@ public class SomeServiceImpl implements SomeService {
   public Student doOther2(final Student s) {
     return s;
   }
+
+  @Override
+  public String doFirst(final String name, final Integer age) {
+    System.out.println("业务方法doFirst");
+    return "doFirst" + name + age;
+  }
 }

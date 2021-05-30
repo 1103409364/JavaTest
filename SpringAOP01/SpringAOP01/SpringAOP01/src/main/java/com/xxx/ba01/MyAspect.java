@@ -3,7 +3,9 @@ package com.xxx.ba01;
 import java.util.Date;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
@@ -33,7 +35,7 @@ public class MyAspect {
   // JoinPoint 业务方法、通知方法、接入点
   // 作用是:可以在通知方法中获取方法执行时的信息，例如方法名称 ，方法的实参。
   // 如果你的切面功能中需要用到方法的信息,就加入JoinPoint .
-  // 这个JoinPoint参数的值是由框架赋予，必须是第个位置的参数
+  // 这个JoinPoint参数的值是由框架赋予，JoinPoint 必须位于参数列表的第一位
 
   @Before(value = "execution(* *..SomeServiceImpl.do*(..))") // 省略 访问权限 简写 返回值 包名 参数 方法名
   public void myBefore(final JoinPoint jp) {
@@ -60,10 +62,55 @@ public class MyAspect {
   // 可以修改返回值
 
   @AfterReturning(value = "execution(* *..SomeServiceImpl.do*(..))", returning = "res")
-  public void myAfter(final Object res) {
+
+  public void myAfter(final JoinPoint jp, final Object res) {
     System.out.println("myAfter后置通知返回值：" + res);
     if (res instanceof Student) {
       ((Student)res).setAge(999);
     }
+  }
+
+  /**
+   * 环绕通知注解：@Around 属性 value 切入点表达式
+   */
+  // 环绕通知特点:
+  // 1 功能最强的通知
+  // 2 在目标方法前\后都可以增强功能
+  // 3 控制目标方法是否被调用执行
+  // 4 修改原来的目标方法的执行结果,影响最后的调用结果
+  //
+  // 环绕通知等同于动态代理的 InvocationHandler接口
+  // 参数 ProceedingJoinPoint 等同于 Method
+
+  // 环绕通知经常用来做事务: 在目标方法之前开启事务,执行目标方法,在目标方法执行后提交事务
+
+  // 环绕通知方法定义格式：
+  // 1 public
+  // 2 必须有一个返回值，推荐使用Object
+  // 方法名称自定义
+  // 方法有参数，固定的参数 ProceedingJoinPoint
+  @Around(value = "execution(* *..SomeServiceImpl.doFirst(..))")
+  public Object myAround(final ProceedingJoinPoint pjp) throws Throwable {
+    Object res = null;
+    String name = "";
+    // 获取参数
+    final Object[] args = pjp.getArgs();
+    if (args != null && args.length > 1) {
+      name = (String)args[0];
+    }
+
+    System.out.println("环绕通知:目标方法执行前时间" + new Date());
+    // 1 目标方法调用 控制目标方法是否执行
+    if ("张三".equals(name)) {
+      res = pjp.proceed(); /// /method. invoke(); object result doFirst( );
+
+    }
+    System.out.println("环绕通知:目标方法执行后时间" + new Date() + "提交事务");
+    // 2 在目标方法前或者后加入功能
+    // 修改目标方法执行的结果,影响方法最后的调用结果
+    if (res == null) {
+      res = "目标方法没有执行";
+    }
+    return res;
   }
 }

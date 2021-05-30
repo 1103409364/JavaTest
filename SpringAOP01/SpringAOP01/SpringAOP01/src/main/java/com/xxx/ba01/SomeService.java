@@ -6,4 +6,6 @@ public interface SomeService {
   String doOther(String name, Integer age);
 
   Student doOther2(Student s);
+
+  String doFirst(String name, Integer age);
 }
