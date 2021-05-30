@@ -3,6 +3,7 @@ package com.xxx.ba01;
 import java.util.Date;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
@@ -18,7 +19,7 @@ public class MyAspect {
   // 4 参数可有可无，不是自定义的，有几个可选参数
 
   /**
-   * 注解：@before：前置通注解 属性：value，值是【切入点表达式】，表示切面功能执行的位置 位置：在方法的上面
+   * 前置通知注解：@before：属性：value，值是【切入点表达式】，表示切面功能执行的位置 位置：在方法的上面
    * 
    * 特点： 1.在目标方法执行前执行 2.不会改变目标方法的执行结果
    */
@@ -36,14 +37,33 @@ public class MyAspect {
 
   @Before(value = "execution(* *..SomeServiceImpl.do*(..))") // 省略 访问权限 简写 返回值 包名 参数 方法名
   public void myBefore(final JoinPoint jp) {
-    System.out.println("方法的签名" + jp.getSignature());
-    System.out.println("方法的名称" + jp.getSignature().getName());
-    final Object[] args = jp.getArgs();
-    for (final Object arg : args) {
-      System.out.println("方法的实参" + arg);
-
-    }
+    // System.out.println("方法的签名" + jp.getSignature());
+    // System.out.println("方法的名称" + jp.getSignature().getName());
+    // final Object[] args = jp.getArgs();
+    // for (final Object arg : args) {
+    // System.out.println("方法的实参" + arg);
+    //
+    // }
     System.out.println("前置通知，方法执行前输出时间：" + new Date());
   }
 
+  /**
+   * 后置通知注解：@AfterReturning使用方法和前置通知一样，
+   */
+  // 属性
+  // 1 value="切入点表达式"
+  // 2 returning="自定义的变量"，表示目标方法的返回值 自定义变量必须和通知方法myAfter的形参名一样
+
+  // 特点：
+  // 执行时机：目标方法执行之后
+  // 能够获取目标方法的返回值，可以根据这个返回值做不同的处理
+  // 可以修改返回值
+
+  @AfterReturning(value = "execution(* *..SomeServiceImpl.do*(..))", returning = "res")
+  public void myAfter(final Object res) {
+    System.out.println("myAfter后置通知返回值：" + res);
+    if (res instanceof Student) {
+      ((Student)res).setAge(999);
+    }
+  }
 }
