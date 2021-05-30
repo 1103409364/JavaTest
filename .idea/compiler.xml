@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringAOP01" />
         <module name="MavenTest02" />
         <module name="SpringHello" />
         <module name="MavenTest01" />
@@ -21,6 +22,7 @@
       <module name="MavenTest02" target="1.8" />
       <module name="MavenTest04" target="1.8" />
       <module name="mavenTestJavaSE" target="1.7" />
+      <module name="SpringAOP01" target="1.8" />
       <module name="SpringDI" target="1.8" />
       <module name="SpringDIAnno" target="1.8" />
       <module name="SpringHello" target="1.8" />
