@@ -172,6 +172,11 @@ public class MyAspect {
     System.out.println("前置通知,在目标方法执行前执行");
   }
 
+  @Before(value = "myExecution2()")
+  public void myBefore2() {
+    System.out.println("myBefore2 前置通知,在目标方法执行前执行");
+  }
+
   /**
    * 定义和管理切入点注解@Pointcut: 项目中多个切入点表达式重复,可复用时使用
    */
@@ -182,4 +187,8 @@ public class MyAspect {
   // 其他的通知中,value属性的值就可以使用这个方法名称代替
   @Pointcut(value = "execution(* *..SomeServiceImpl.do*(..))")
   public void myExecution() {}
+
+  // 切入点表达式 测试无接口的情况
+  @Pointcut(value = "execution(* *..SomeService2.do*(..))")
+  public void myExecution2() {}
 }

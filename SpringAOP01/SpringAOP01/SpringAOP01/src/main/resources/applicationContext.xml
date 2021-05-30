@@ -6,6 +6,7 @@
   <!--把对象交给spring容器，由spring容器统一创建，管理对象-->
   <!--声明目标对象-->
   <bean id="someService" class="com.xxx.ba01.Impl.SomeServiceImpl"/>
+  <bean id="someService2" class="com.xxx.ba01.SomeService2"/>
 
   <!--声明切面类对象-->
   <bean id="myAspect" class="com.xxx.ba01.MyAspect"/>
