@@ -34,7 +34,7 @@ public class MyAspect {
   // 如果你的切面功能中需要用到方法的信息,就加入JoinPoint .
   // 这个JoinPoint参数的值是由框架赋予，JoinPoint 必须位于参数列表的第一位
 
-  @Before(value = "execution(* *..SomeServiceImpl.do*(..))") // 省略 访问权限 简写 返回值 包名 参数 方法名
+  @Before(value = "execution(* *..SomeServiceImpl.dodoSome(..))") // 省略 访问权限 简写 返回值 包名 参数 方法名
   public void myBefore(final JoinPoint jp) {
     // System.out.println("方法的签名" + jp.getSignature());
     // System.out.println("方法的名称" + jp.getSignature().getName());
@@ -58,7 +58,7 @@ public class MyAspect {
   // 能够获取目标方法的返回值，可以根据这个返回值做不同的处理
   // 可以修改返回值
 
-  @AfterReturning(value = "execution(* *..SomeServiceImpl.do*(..))", returning = "res")
+  @AfterReturning(value = "execution(* *..SomeServiceImpl.doOther(..))", returning = "res")
 
   public void myAfter(final JoinPoint jp, final Object res) {
     System.out.println("myAfter后置通知返回值：" + res);
@@ -165,4 +165,21 @@ public class MyAspect {
   public void myAfter() {
     System.out.println("最终通知执行");
   }
+
+  // @Before(value = "execution(* *..SomeServiceImpl.do*(..))")
+  @Before(value = "myExecution()")
+  public void myBefore() {
+    System.out.println("前置通知,在目标方法执行前执行");
+  }
+
+  /**
+   * 定义和管理切入点注解@Pointcut: 项目中多个切入点表达式重复,可复用时使用
+   */
+
+  // 属性 value="切入点表达式"
+  // 位置: 在自定义的方法上面
+  // 当使用@Pointcut 定义在一个方法的上面,此时这个方法的名称就是切入点表达式的别名,如下面的myExecution()
+  // 其他的通知中,value属性的值就可以使用这个方法名称代替
+  @Pointcut(value = "execution(* *..SomeServiceImpl.do*(..))")
+  public void myExecution() {}
 }
