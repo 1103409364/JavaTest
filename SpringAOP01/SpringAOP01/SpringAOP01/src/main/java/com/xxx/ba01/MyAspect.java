@@ -2,6 +2,7 @@ package com.xxx.ba01;
 
 import java.util.Date;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
@@ -27,8 +28,21 @@ public class MyAspect {
   // @Before(value = "execution(void com.xxx.ba01.Impl.SomeServiceImpl.doSome(String, Integer))") // 省略 访问权限
   // @Before(value = "execution(void *..doSome(String, Integer))") // 省略 访问权限 包名
   // @Before(value = "execution(* *..doSome(..))") // 省略 访问权限 简写 返回值 包名 参数
+
+  // JoinPoint 业务方法、通知方法、接入点
+  // 作用是:可以在通知方法中获取方法执行时的信息，例如方法名称 ，方法的实参。
+  // 如果你的切面功能中需要用到方法的信息,就加入JoinPoint .
+  // 这个JoinPoint参数的值是由框架赋予，必须是第个位置的参数
+
   @Before(value = "execution(* *..SomeServiceImpl.do*(..))") // 省略 访问权限 简写 返回值 包名 参数 方法名
-  public void myBefore() {
+  public void myBefore(final JoinPoint jp) {
+    System.out.println("方法的签名" + jp.getSignature());
+    System.out.println("方法的名称" + jp.getSignature().getName());
+    final Object[] args = jp.getArgs();
+    for (final Object arg : args) {
+      System.out.println("方法的实参" + arg);
+
+    }
     System.out.println("前置通知，方法执行前输出时间：" + new Date());
   }
 
