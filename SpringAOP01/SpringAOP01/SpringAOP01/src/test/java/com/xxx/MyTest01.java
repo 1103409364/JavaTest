@@ -19,7 +19,8 @@ public class MyTest01 {
     // final Student s = new Student("小明", 1);
     // proxy.doOther2(s);
     // System.out.println("经过后置通知修改" + s);
-    final Object res = proxy.doFirst("张四", 55);
-    System.out.println("执行结果:" + res);
+    // final Object res = proxy.doFirst("张四", 55);
+    // System.out.println("执行结果:" + res);
+    proxy.doSecond();
   }
 }

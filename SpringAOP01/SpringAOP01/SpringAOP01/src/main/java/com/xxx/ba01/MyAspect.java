@@ -4,10 +4,7 @@ import java.util.Date;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
 // aspectj框架中的注解，声明当前类是切面类，、
 // 切面类：给业务方法增加功能，在这个类中有切面的功能代码
@@ -112,5 +109,35 @@ public class MyAspect {
       res = "目标方法没有执行";
     }
     return res;
+  }
+
+  /**
+   * 异常通知注解@AfterThrowing 不常用
+   * 
+   * 属性 1 value ="切入点表达式" 2 throwing 自定义变量,表示目标方法抛出的异常对象,变量名必须和异常通知方法的形参名一样
+   * 
+   */
+
+  // 特点:
+  // 1 在目标方法抛出异常时执行
+  // 2 可以做异常监控程序,监控目标方法是否有异常,如有异常发送邮件或者短信通知
+  //
+  // 异常通知方法定义
+  // 1 public
+  // 2 么有返回值
+  // 3 方法名自定义
+  // 4可选参数JoinPoint\Exception
+
+  // 执行原理
+  // try{
+  // SomeServiceImpl.doSecond(..)
+  // }catch(Exception e){
+  // myAfterThrowing(e);
+  // }
+
+  @AfterThrowing(value = "execution(* *..SomeServiceImpl.do*(..))", throwing = "e")
+  public void myAfterThrowing(final Exception e) {
+    System.out.println("异常通知:方法执行有异常,异常消息:" + e.getLocalizedMessage());
+    // 发邮件通知
   }
 }

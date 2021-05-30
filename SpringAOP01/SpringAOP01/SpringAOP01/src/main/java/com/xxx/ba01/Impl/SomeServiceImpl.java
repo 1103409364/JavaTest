@@ -26,4 +26,10 @@ public class SomeServiceImpl implements SomeService {
     System.out.println("业务方法doFirst");
     return "doFirst" + name + age;
   }
+
+  @Override
+  public void doSecond() {
+    // final int a = 1 / 0; // 抛出异常
+    System.out.println("业务方法doSecond");
+  }
 }

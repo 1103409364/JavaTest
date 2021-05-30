@@ -8,4 +8,6 @@ public interface SomeService {
   Student doOther2(Student s);
 
   String doFirst(String name, Integer age);
+
+  void doSecond();
 }
