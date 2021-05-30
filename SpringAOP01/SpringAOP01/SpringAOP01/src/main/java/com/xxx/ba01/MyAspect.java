@@ -140,4 +140,29 @@ public class MyAspect {
     System.out.println("异常通知:方法执行有异常,异常消息:" + e.getLocalizedMessage());
     // 发邮件通知
   }
+
+  /**
+   * 最终通知注解 @After
+   */
+
+  // 最终通知方法定义
+  // 1 public
+  // 2 么有返回值
+  // 3 方法名自定义
+  // 4可选参数JoinPoint
+
+  // 最终通知总是被执行,作用: 做一些清除工作
+
+  // 执行原理
+  // try{
+  // SomeServiceImpl.doThird(..)
+  // }catch(Exception e){
+  // }finally{
+  // myAfter()
+  // }
+
+  @After(value = "execution(* *..SomeServiceImpl.do*(..))")
+  public void myAfter() {
+    System.out.println("最终通知执行");
+  }
 }

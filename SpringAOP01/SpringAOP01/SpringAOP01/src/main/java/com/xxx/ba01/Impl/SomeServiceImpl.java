@@ -32,4 +32,10 @@ public class SomeServiceImpl implements SomeService {
     // final int a = 1 / 0; // 抛出异常
     System.out.println("业务方法doSecond");
   }
+
+  @Override
+  public void doThird() {
+    // final int a = 1 / 0; // 抛出异常
+    System.out.println("业务方法doThird执行");
+  }
 }

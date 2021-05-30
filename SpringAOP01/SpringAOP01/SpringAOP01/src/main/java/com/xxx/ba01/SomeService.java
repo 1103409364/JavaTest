@@ -10,4 +10,6 @@ public interface SomeService {
   String doFirst(String name, Integer age);
 
   void doSecond();
+
+  void doThird();
 }
