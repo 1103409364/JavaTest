@@ -10,8 +10,8 @@
     springMap.put(id,对象)，例如：springMap.put("someService", new SomeServiceImpl());
     一个bean标签声明一个对象。
   -->
-  <bean id="someService" class="com.xxx.service.Impl.SomeServiceImpl"/>
-  <bean id="someService2" class="com.xxx.service.Impl.SomeServiceImpl"/>
+  <bean id="someService" class="com.xxx.service.impl.SomeServiceImpl"/>
+  <bean id="someService2" class="com.xxx.service.impl.SomeServiceImpl"/>
   <!--  创建一个非自定义对象-->
   <bean id="myDate" class="java.util.Date"/>
 </beans>

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.xxx.dao.StudentDao;
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 import com.xxx.service.StudentService;
 import com.xxx.util.SqlSessionUtil;
 import com.xxx.vo.StudentAndClassroomVo;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxx.dao.StudentDao">
+  <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
+  <insert id="insertStudent">
+    insert into student
+    values (#{id}, #{name}, #{age}, #{email})
+--     values后面的顺序和表的顺序要一致
+  </insert>
+
+  <select id="selectStudents" resultType="com.xxx.entity.Student">
+    select id, name, email, age
+    from student
+    order by id desc
+  </select>
+</mapper>

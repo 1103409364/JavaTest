@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import com.xxx.service.HelloService;
-import com.xxx.service.Impl.HelloServiceImpl;
+import com.xxx.service.impl.HelloServiceImpl;
 
 public class TestApp {
   public static void main(final String[] args)

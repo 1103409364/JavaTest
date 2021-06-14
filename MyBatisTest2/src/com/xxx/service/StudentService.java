@@ -1,6 +1,6 @@
 package com.xxx.service;
 
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 
 public interface StudentService {
   public Student getById(String id);

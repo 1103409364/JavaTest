@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.xxx.service.SomeService;
-import com.xxx.service.Impl.SomeServiceImpl;
+import com.xxx.service.impl.SomeServiceImpl;
 
 public class MyTest {
   @Test

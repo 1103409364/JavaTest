@@ -16,7 +16,7 @@
       <select>:在标签对中写select开头的sql语句处理查询操作
   -->
   <!--
-    查询 com.xxx.domain.Student
+    查询 com.xxx.entity.Student
     parameterType：java.lang.String、String、string或者省略不写
     parameterType="java.lang.String"
   -->

@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 
 public class MyBatisTest {
   public static void main(final String[] args) {

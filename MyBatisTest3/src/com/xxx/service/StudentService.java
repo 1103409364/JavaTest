@@ -3,7 +3,7 @@ package com.xxx.service;
 import java.util.List;
 import java.util.Map;
 
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 import com.xxx.vo.StudentAndClassroomVo;
 
 public interface StudentService {

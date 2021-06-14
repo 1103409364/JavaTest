@@ -1,6 +1,6 @@
 package com.xxx.dao;
 
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 
 public interface StudentDao {
   public Student getById(String id);

@@ -31,8 +31,8 @@
    用别名写起来方便，但是可读性降低了，不知道类在哪个包
    -->
   <typeAliases>
-    <!--    <typeAlias type="com.xxx.domain.Student" alias="stu"/>-->
-    <package name="com.xxx.domain"/>
+    <!--    <typeAlias type="com.xxx.entity.Student" alias="stu"/>-->
+    <package name="com.xxx.entity"/>
     <package name="com.xxx.vo"/>
   </typeAliases>
 

@@ -3,7 +3,7 @@ package com.xxx.dao.impl;
 import org.apache.ibatis.session.SqlSession;
 
 import com.xxx.dao.StudentDao;
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 import com.xxx.util.SqlSessionUtil;
 
 public class StudentDaoImpl implements StudentDao {

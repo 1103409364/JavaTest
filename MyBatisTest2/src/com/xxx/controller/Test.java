@@ -1,6 +1,6 @@
 package com.xxx.controller;
 
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 import com.xxx.service.StudentService;
 import com.xxx.service.impl.StudentServiceImpl;
 import com.xxx.util.ServiceFactory;

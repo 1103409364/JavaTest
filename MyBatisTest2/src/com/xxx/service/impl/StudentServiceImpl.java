@@ -2,7 +2,7 @@ package com.xxx.service.impl;
 
 import com.xxx.dao.StudentDao;
 import com.xxx.dao.impl.StudentDaoImpl;
-import com.xxx.domain.Student;
+import com.xxx.entity.Student;
 import com.xxx.service.StudentService;
 
 public class StudentServiceImpl implements StudentService {
