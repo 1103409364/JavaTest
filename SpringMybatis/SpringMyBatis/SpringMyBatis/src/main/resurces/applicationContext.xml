@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+  <context:property-placeholder location="classpath:jdbc.properties"/>
   <!--声明数据源DataSource，创建数据源对象。作用是连接数据库的-->
   <bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+    <!--    !set注入给DruidDataSource 作用是连接数据库的-->
+    <!--    使用属性配置文件中的数据，语法${key}-->
     <!-- set注入给DruidDataSource提供连接数据库信息 jdbc:mysql://127.0.0.1:3306/db-->
-    <property name="url" value="jdbc:mysql://localhost:3306/exam"/>
-    <property name="username" value="root"/>
-    <property name="password" value="admin123"/>
-    <property name="maxActive" value="20"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+    <property name="maxActive" value="${jdbc.maxActive}"/>
   </bean>
 
   <!--  声明mybatis中提供的SqlSessionFactoryBean类，这个类内部创建SqlSessionFactory-->

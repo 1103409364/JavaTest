@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../demo1" />
     <file type="web" url="file://$PROJECT_DIR$/MavenTest04" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringWeb/SpringWeb" />
+    <file type="web" url="file://$PROJECT_DIR$/test" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -19,6 +21,8 @@
         <option value="$PROJECT_DIR$/SpringDIAnno/pom.xml" />
         <option value="$PROJECT_DIR$/SpringAOP01/SpringAOP01/SpringAOP01/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMybatis/SpringMyBatis/SpringMyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/test/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringWeb/SpringWeb/pom.xml" />
       </list>
     </option>
   </component>

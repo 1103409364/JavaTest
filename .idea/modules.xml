@@ -15,7 +15,8 @@
       <module fileurl="file://$PROJECT_DIR$/SpringDIAnno/SpringDIAnno.iml" filepath="$PROJECT_DIR$/SpringDIAnno/SpringDIAnno.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringHello/SpringHello.iml" filepath="$PROJECT_DIR$/SpringHello/SpringHello.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMybatis/SpringMyBatis/SpringMyBatis/SpringMyBatis.iml" filepath="$PROJECT_DIR$/SpringMybatis/SpringMyBatis/SpringMyBatis/SpringMyBatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringWeb/SpringWeb/SpringWeb.iml" filepath="$PROJECT_DIR$/SpringWeb/SpringWeb/SpringWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/Test.iml" filepath="$PROJECT_DIR$/test/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/../demo1/demo1.iml" filepath="$PROJECT_DIR$/../demo1/demo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/examManage/examManage.iml" filepath="$PROJECT_DIR$/examManage/examManage.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloWorld/helloWorld.iml" filepath="$PROJECT_DIR$/helloWorld/helloWorld.iml" />
