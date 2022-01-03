@@ -1,10 +1,11 @@
 package com.demo.springboot.mapper;
 
 import com.demo.springboot.model.Student;
-import org.apache.ibatis.annotations.Mapper;
 
 //注解报错可能是依赖问题
-@Mapper
+//每次都要在一个Mapper上加@Mapper注解？有没有更简单的方式
+//在启动入口类上加@MapperScan
+//@Mapper
 public interface StudentMapper {
   int deleteByPrimaryKey(Integer id);
 
