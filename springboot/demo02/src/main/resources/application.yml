@@ -1,0 +1,6 @@
+#配置端口 配置根
+server:
+  port: 8091
+  servlet:
+    context-path: /xxx
+
