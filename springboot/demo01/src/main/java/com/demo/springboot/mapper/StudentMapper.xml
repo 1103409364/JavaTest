@@ -2,10 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.mapper.StudentMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.model.Student">
+    <!--
+      id 主键字段，除了主键之外都是用result表示
+      column 数据库中的字段名称
+      property 映射对象属性名称
+      jdbcTypes数据库数据类型，可以省略
+
+      resultMap作用:
+      1.当数据库中字段名称与实体类对象的属性名不一致时，可以进行转换
+      2.当前查询的结果没有对应一个表的时候，可以自定义个结果集，多表联查自己组装返回结果
+
+      数据库表字段名称 实体对象属性名称
+      user_name     userName
+      如果数据库中的字段由多个单词构成，通过MyBatis逆向工程生成的对象属性
+      会按照驼峰命名法生成属性名称
+      数据库中字段名必须使用下划线分隔
+    -->
     <id column="id" jdbcType="INTEGER" property="id"/>
     <result column="name" jdbcType="VARCHAR" property="name"/>
     <result column="age" jdbcType="INTEGER" property="age"/>
   </resultMap>
+  <!-- sql语句片段，将公共部分抽取出来，通过include引用，避免重复书写 -->
   <sql id="Base_Column_List">
     id
     , name, age
@@ -25,6 +42,9 @@
     insert into t_student (id, name, age)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
   </insert>
+  <!--trim拼接，prefix前缀，suffix后缀。suffixOverrides去除多余逗号-->
+  <!--使用封装类型 parameterType="java.lang.Integer"，不用再判断空字符串-->
+  <!--选择性插入-->
   <insert id="insertSelective" parameterType="com.demo.springboot.model.Student">
     insert into t_student
     <trim prefix="(" suffix=")" suffixOverrides=",">

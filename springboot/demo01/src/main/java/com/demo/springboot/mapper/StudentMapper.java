@@ -1,7 +1,10 @@
 package com.demo.springboot.mapper;
 
 import com.demo.springboot.model.Student;
+import org.apache.ibatis.annotations.Mapper;
 
+//注解报错可能是依赖问题
+@Mapper
 public interface StudentMapper {
   int deleteByPrimaryKey(Integer id);
 
@@ -12,6 +15,6 @@ public interface StudentMapper {
   Student selectByPrimaryKey(Integer id);//根据主键查对象
 
   int updateByPrimaryKeySelective(Student record);
-  
+
   int updateByPrimaryKey(Student record);//根据主键更新key
 }
