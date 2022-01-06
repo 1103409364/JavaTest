@@ -8,7 +8,15 @@ public interface StudentService {
    * 根据学生id查详情
    *
    * @param id
-   * @return
+   * @return void
    */
   Student queryStudentById(Integer id);
+
+  /**
+   * 根据学生id修改学生的信息
+   *
+   * @param student
+   * @return int
+   */
+  int updateStudentById(Student student);
 }

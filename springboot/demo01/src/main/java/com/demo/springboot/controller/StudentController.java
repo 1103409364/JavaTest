@@ -16,7 +16,17 @@ public class StudentController {
   @RequestMapping(value = "/student")
   public @ResponseBody
   Object student(Integer id) {
-    Student student = studentService.queryStudentById(id);
-    return student;
+    return studentService.queryStudentById(id);
+  }
+
+  @RequestMapping(value = "/update")
+  public @ResponseBody
+  Object update(Integer id, String name) {
+    Student student = new Student();
+    student.setId(id);
+    student.setName(name);
+    int updateCount = studentService.updateStudentById(student);
+
+    return "修改学生编号为" + id + " 的姓名修改结果：" + updateCount;
   }
 }

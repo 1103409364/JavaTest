@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //SpringBoot项目启动入口类
 @SpringBootApplication // 开启SpringBoot配置
-@MapperScan(basePackages = " com.demo.springboot.mapper")
+@MapperScan(basePackages = "com.demo.springboot.mapper")
 public class Demo01Application {
 
   public static void main(String[] args) {
