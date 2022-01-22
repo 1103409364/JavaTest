@@ -4,6 +4,7 @@ import com.demo.springboot.mapper.StudentMapper;
 import com.demo.springboot.model.Student;
 import com.demo.springboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +27,22 @@ public class StudentServiceImpl implements StudentService {
     int i = studentMapper.updateByPrimaryKeySelective(student);
     //int a = 10 / 0; //报错java.lang.ArithmeticException: / by zero
     return i;
+  }
+
+  @Autowired
+  private RedisTemplate<Object, Object> redisTemplate; // 操作redis数据类型的redis模板对象，redis依赖提供
+
+  /**
+   * 将值存入Redis
+   *
+   * @param key
+   * @param value
+   */
+  @Override
+
+  public void put(String key, String value) {
+    //operation的缩写 For 后面表示类型
+    redisTemplate.opsForValue().set(key, value);
   }
 
 }

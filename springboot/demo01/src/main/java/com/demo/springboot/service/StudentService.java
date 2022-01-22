@@ -19,4 +19,12 @@ public interface StudentService {
    * @return int
    */
   int updateStudentById(Student student);
+
+  /**
+   * 将值存入Redis
+   *
+   * @param key
+   * @param value
+   */
+  void put(String key, String value);
 }

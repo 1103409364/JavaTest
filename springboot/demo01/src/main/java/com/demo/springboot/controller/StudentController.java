@@ -29,4 +29,11 @@ public class StudentController {
 
     return "修改学生编号为" + id + " 的姓名修改结果：" + updateCount;
   }
+
+  @RequestMapping(value = "/put")
+  public @ResponseBody
+  Object put(String key, String value) {
+    studentService.put(key, value);
+    return "值已成功放入redis";
+  }
 }
