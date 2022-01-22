@@ -45,4 +45,15 @@ public class StudentServiceImpl implements StudentService {
     redisTemplate.opsForValue().set(key, value);
   }
 
+  /**
+   * 从redis中获取指定key的值
+   *
+   * @param key
+   * @return
+   */
+  @Override
+  public String get(String key) {
+    return (String) redisTemplate.opsForValue().get(key);
+  }
+
 }

@@ -36,4 +36,11 @@ public class StudentController {
     studentService.put(key, value);
     return "值已成功放入redis";
   }
+
+  @RequestMapping(value = "/get")
+  public @ResponseBody
+  String get() {
+    String count = studentService.get("count");
+    return "数据 count 为：" + count;
+  }
 }
