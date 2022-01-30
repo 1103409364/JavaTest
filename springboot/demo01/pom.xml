@@ -75,6 +75,13 @@
           <include>**/*.xml</include>
         </includes>
       </resource>
+      <!--指定资源文件-->
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </resource>
     </resources>
 
     <plugins>
