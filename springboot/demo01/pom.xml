@@ -9,6 +9,8 @@
     <version>2.6.2</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+  <!--修改打包方式，打包必须要有底部的打包插件org.springframework.boot-->
+  <packaging>war</packaging>
   <!-- 当前项目GAV -->
   <groupId>com.demo.springboot</groupId>
   <artifactId>demo</artifactId>
@@ -63,6 +65,8 @@
   </dependencies>
 
   <build>
+    <!--指定打war包的名称-->
+    <finalName>SpringWar</finalName>
     <!--手动指定文件夹为resources-->
     <resources>
       <resource>
