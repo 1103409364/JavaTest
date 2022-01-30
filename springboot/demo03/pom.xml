@@ -29,6 +29,8 @@
   </dependencies>
 
   <build>
+    <!--指定打jar包的名称-->
+    <finalName>SpringJar</finalName>
     <!-- Springboot项目默认推荐使用的前端引擎是thymeleaf-->
     <!-- 要使用springboot集成jsp，手动指定jsp最后编译的路径，而且springboot集成-->
     <!-- jsp编译jsp的路径是springboot规定好的位置 META-INF/resources-->
@@ -41,6 +43,13 @@
         <!--指定源文件目录中哪些文件要进行编译-->
         <includes>
           <include>*.*</include>
+        </includes>
+      </resource>
+      <!--指定资源文件-->
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.*</include>
         </includes>
       </resource>
     </resources>
