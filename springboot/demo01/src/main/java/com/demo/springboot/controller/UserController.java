@@ -41,4 +41,11 @@ public class UserController {
   Object error() {
     return "error";
   }
+
+  // 该请求登录后才能访问
+  @RequestMapping(value = "/detail")
+  public @ResponseBody
+  String detail() {
+    return "/user/detail";
+  }
 }
