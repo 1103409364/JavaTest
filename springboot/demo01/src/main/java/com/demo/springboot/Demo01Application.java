@@ -3,9 +3,11 @@ package com.demo.springboot;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 //SpringBoot项目启动入口类
 @SpringBootApplication // 开启SpringBoot配置
+@ServletComponentScan(basePackages = "com.demo.springboot.filter")
 @MapperScan(basePackages = "com.demo.springboot.mapper")
 public class Demo01Application {
 
