@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "server.profiles",
+      "type": "java.lang.String",
+      "description": "Description for server.profiles."
+    }
+  ]
+}
